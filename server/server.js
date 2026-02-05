@@ -40,7 +40,7 @@ io.on('connection', (socket) => {
 app.use(cors());
 app.use(express.json({ limit: '4mb' }));
 
-app.use('/', (req, res) => res.send('Server is running'));
+app.get('/', (req, res) => res.send('Server is running'));
 
 app.use('/api/user', userRouter);
 app.use('/api/chat', chatRouter);
